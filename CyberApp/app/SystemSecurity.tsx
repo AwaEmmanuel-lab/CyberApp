@@ -238,7 +238,7 @@ const SystemSecurity = () => {
       <Text style = {styles.header}>System Security Assesment</Text>
 
       <FlatList
-      data={deviceSecurityQuestions}
+      data={questions}
       renderItem= {({item}) => <Singlelist3 item = {item}/>}
       keyExtractor={item => item.id}
       />

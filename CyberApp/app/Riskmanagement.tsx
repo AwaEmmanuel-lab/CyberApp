@@ -10,7 +10,7 @@ export interface RiskmanagementProps {
   riskloaddata: () => void;
 }
 
-const Riskmanagement = ({Riskmanagementpackage}: {Riskmanagementpackage:RiskmanagementProps}) => {
+const Riskmanagement = () => {
 
 
 

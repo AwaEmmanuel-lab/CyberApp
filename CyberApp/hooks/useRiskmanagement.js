@@ -17,6 +17,9 @@ export const useRiskmanagement = () => {
                 },
                 body: JSON.stringify({qid: qid, answer: Number(answer)})
             })
+
+            const data = await respone.json()
+            console.log("Response from API:", data)
         } catch (error) {
             console.log("Error submitting answer to account security question: ", error)
         }finally{
