@@ -34,7 +34,7 @@ const [sysisLoading, setsysisLoading]= useState(false)
         }finally{
             setsysisLoading(false)
         }
-    }, [qid, answer]
+    }, []
 )
     const sysloaddata = useCallback(async () => {
         try {

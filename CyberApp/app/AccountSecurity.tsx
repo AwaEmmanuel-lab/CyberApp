@@ -26,6 +26,9 @@ const Singlelist1 = ({item}: {item:list}) => {
       <View style = {styles.viewForthetwobuttons}>
         <TouchableOpacity style = {styles.fortouchableopacity} onPress={() =>{
           answertoaccountsecurityquestion(item.id, 1);
+          console.log(item.id)
+          console.log(1)
+          console.log("Clicked Yes")
           removequestions(item.id);
         }}>
         <Text style = {styles.textinbutton}>Yes</Text>

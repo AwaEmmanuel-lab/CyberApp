@@ -20,7 +20,7 @@ export const useRiskmanagement = () => {
         }finally{
             setriskisLoading(false)
         }
-    }, [qid, answer])
+    }, [])
 
     const fetchriskscore = useCallback (async () => {
         try {

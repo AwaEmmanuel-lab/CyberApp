@@ -6,6 +6,12 @@ const app = express();
 
 dotenv.config();
 
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type"]
+}));
+
 app.use(express.json());
 
 const port = process.env.PORT
@@ -32,7 +38,7 @@ async function createtable(){
         )`
 
     } catch (error) {
-        res.status(500).json({message:"Internal server error"})
+        // res.status(500).json({message:"Internal server error"})
         console.log("Internal server error: ", error)
         process.exit(1)
     }    

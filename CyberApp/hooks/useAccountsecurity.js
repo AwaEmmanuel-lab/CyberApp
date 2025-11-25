@@ -5,16 +5,18 @@ export const useAccountsecurity = () => {
     const [accountscore, setaccountscore]= useState(0)
     const [accisLoading, setaccisLoading]= useState(false)
 
+    const API_URL = 'https://cyberapp-eqyb.onrender.com'
+
     const answertoaccountsecurityquestion = useCallback(async (qid, answer) => {
         setaccisLoading(true)
         console.log("Sending to API:", {qid: qid, answer: answer})
         try {
-            const respone = await fetch('http://localhost:5000/api/accountsecurity', {
+            const respone = await fetch(`${API_URL}/api/accountsecurity`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({qid: qid, answer: answer})
+                body: JSON.stringify({qid: qid, answer: Number(answer)})
             })
             const data = await respone.json()
             console.log("Response from API:", data)
@@ -28,7 +30,7 @@ export const useAccountsecurity = () => {
     const fetchaccountsecurityscore = useCallback (async () => {
         try {
             setaccisLoading(true)
-            const response = await fetch('http://localhost:5000/api/sum/accountsecurity')
+            const response = await fetch(`${API_URL}/api/sum/accountsecurity`)
             const result = await response.json()
             setaccountscore(result)
         } catch (error) {
