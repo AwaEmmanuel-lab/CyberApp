@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
     "react-native-network-info": "^5.2.2"
   }
 }
