@@ -12,6 +12,7 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
+app.options("*", cors());
 
 app.use(express.json());
 
@@ -135,8 +136,9 @@ app.get("/api/sum/systemsecurity", async (req,res) => {
         console.log(documents[0].systemsecurityscore);
         return res.status(200).json(documents[0].systemsecurityscore);
     } catch (error) {
-      return res.status(500).json({message:"Internal server error"})
-        console.log("Internal server error: ", error)  
+        
+        console.log("Internal server error: ", error) 
+        return res.status(500).json({message:"Internal server error"}) 
     }
 })
 

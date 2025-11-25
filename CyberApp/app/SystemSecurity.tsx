@@ -4,11 +4,7 @@ import Singlelist from '@/components/Singlelist';
 import { list } from '@/hooks/uselistcontext';
 import { useSystemSecurity } from '@/hooks/useSystemSecurity.js';
 
-export interface SystemSecurityProps {
-  systemsecurityscore: number;
-  sysisLoading: boolean;
-  sysloaddata: () => void;
-}
+
 
   const deviceSecurityQuestions = [
   // --- Section A: Device Access & Physical Security (Weight: 24 points) ---
@@ -199,7 +195,9 @@ export interface SystemSecurityProps {
 ];
 
 
-const SystemSecurity = ({syssecpackage}: {syssecpackage:SystemSecurityProps}) => {
+const SystemSecurity = () => {
+
+  
 
   const {answertosystemsecurityquestion} = useSystemSecurity();
   const [questions, setquestions] = useState(deviceSecurityQuestions);

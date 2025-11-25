@@ -6,10 +6,14 @@ export const useSystemSecurity = () => {
 const {systemsecurityscore, setsystemsecurityscore }=useState(0)
 const [sysisLoading, setsysisLoading]= useState(false)
 
+
+    const API_URL = 'https://cyberapp-eqyb.onrender.com'
+
+    
     const fetchsystemsecurityscore = useCallback(async () => {
         try{
             setsysisLoading(true)
-            const response = await fetch('http://localhost:5000/api/sum/systemsecurity')
+            const response = await fetch(`${API_URL}/api/sum/systemsecurity`)
             const result = await response.json()
             setsystemsecurityscore(result)
         } catch (error) {
@@ -22,7 +26,7 @@ const [sysisLoading, setsysisLoading]= useState(false)
     const answertosystemsecurityquestion = useCallback(async (qid, answer) => {
         try {
             setsysisLoading(true)
-            const response = await fetch('http://localhost:5000/api/systemsecurity', {
+            const response = await fetch(`${API_URL}/api/systemsecurity`, {
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'
