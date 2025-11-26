@@ -149,7 +149,8 @@ function analyticsstyle (width: number) {
     trackerContainer:{
       flexDirection:"row",
       borderWidth: 2,
-      minWidth:300,
+       minWidth:300,
+      //width: '100%',
       borderColor:"#e9c5adff",
       backgroundColor: "#000000",
       marginTop: 15,
@@ -177,7 +178,7 @@ function analyticsstyle (width: number) {
     },
     textinput:{
       borderWidth:1,
-      borderColor:"#000000",
+      borderColor:"#D3AF37",
       marginTop: 25,
       padding: 10,
       minWidth:300,
@@ -185,10 +186,9 @@ function analyticsstyle (width: number) {
     },
     button:{
       marginTop:16,
-      borderWidth: 1,
       padding: 8,
       borderRadius:15,
-      backgroundColor: 'black'
+      backgroundColor: "#D3AF37"
     },
     textinbutton:{
       color: "white",

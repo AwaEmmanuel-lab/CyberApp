@@ -53,7 +53,7 @@ const Singlelist1 = ({item}: {item:list}) => {
 
   return (
     
-    <View style = {{flex: 1, backgroundColor: '#ffefbbff'}}>
+    <View style = {{flex: 1, backgroundColor: '#FDEBA3'}}>
       <Text style = {styles.header}>Account Security Assesment</Text>
 
       <FlatList
@@ -62,7 +62,7 @@ const Singlelist1 = ({item}: {item:list}) => {
       keyExtractor={item => item.id}
       />
 
-      <TouchableOpacity onPress={() => setquestions(accountSecurityQuestionsV2)}>
+      <TouchableOpacity onPress={() => setquestions(accountSecurityQuestionsV2)} style = {styles.resetbtn}>
         <Text>Reset Questions</Text>
       </TouchableOpacity>
     </View>
@@ -76,6 +76,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 25,
     padding: 10
+  },
+  resetbtn:{
+    alignItems: "center",
+    justifyContent: 'center',
+    padding: 3
   },
   container:{
         // borderWidth: 1,

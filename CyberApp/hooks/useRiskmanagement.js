@@ -37,15 +37,21 @@ export const useRiskmanagement = () => {
             console.log("Error fetching account security score: ", error)
             setriskisLoading(false)
         }
+        finally{
+            setriskisLoading(false)
+        }
     },[])
 
     const riskloaddata = useCallback(async () => {
         try {
-            await Promise.all([answertotheriskmanagementquestions(), fetchriskscore()])
+            setriskisLoading(true)
+            await fetchriskscore()
         } catch (error) {
             console.log("couldn't load data:", error)
+        }finally{
+            setriskisLoading(false)
         }
-    }, [answertotheriskmanagementquestions, fetchriskscore])
+    }, [fetchriskscore])
 
     return {riskscore, riskisLoading, answertotheriskmanagementquestions, fetchriskscore, riskloaddata}
 }

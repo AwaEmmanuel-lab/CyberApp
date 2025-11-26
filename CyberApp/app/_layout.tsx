@@ -9,7 +9,8 @@ export default function RootLayout() {
     <SafeAreaView style = {styles.bigContainer}>
       <Stack screenOptions={{headerShown:true}}>
       <Stack.Screen name="index" options={{title: "Home", headerShown:false}}/>
-      <Stack.Screen name = "analytics" options = {{title: "Scanner", headerShown: true}}/>
+      <Stack.Screen name = "analytics" options = {{title: "Link Scanner", headerShown: true}}/>
+      <Stack.Screen name = "Wifi.tsx" options = {{title: "Message Scanner", headerShown: true }}/>
       </Stack>
     </SafeAreaView>
     

@@ -35,6 +35,7 @@ export const useAccountsecurity = () => {
             setaccountscore(result)
         } catch (error) {
             console.log("Error fetching account security score: ", error)
+        }finally{
             setaccisLoading(false)
         }
     }, [])

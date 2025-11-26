@@ -234,7 +234,7 @@ const SystemSecurity = () => {
     }
 
   return (
-    <View style = {{flex: 1, backgroundColor: 'white'}}>
+    <View style = {{flex: 1, backgroundColor: '#FDEBA3'}}>
       <Text style = {styles.header}>System Security Assesment</Text>
 
       <FlatList
@@ -243,7 +243,7 @@ const SystemSecurity = () => {
       keyExtractor={item => item.id}
       />
 
-      <TouchableOpacity onPress={() => setquestions(deviceSecurityQuestions)}>
+      <TouchableOpacity onPress={() => setquestions(deviceSecurityQuestions)} style = {styles.resetbtn}>
         <Text>Reset Questions</Text>
       </TouchableOpacity>
     </View>
@@ -258,6 +258,11 @@ const styles = StyleSheet.create({
     fontSize: 25,
     padding: 10
   },
+  resetbtn:{
+    alignItems: "center",
+    justifyContent: 'center',
+    padding: 3
+  },
   container:{
         // borderWidth: 1,
         marginTop: 10,
@@ -268,12 +273,14 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "white",
+        backgroundColor: "#d1a209ff",
         shadowColor: "#000",
         shadowOffset: {
           width: 3,
           height: 3
         },
+        shadowOpacity:0.5,
+        shadowRadius: 15
     },
     viewForthetwobuttons:{
       flexDirection: 'row',

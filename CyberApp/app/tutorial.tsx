@@ -33,12 +33,12 @@ const tutorial = () => {
         <TouchableOpacity onPress={() => {
           router.push('/AccountSecurity')
         }}>
-          <LinearGradient colors={["#000000ff","#0f0a57ff"]} style={styles.view1} start={{x:0, y: 0}} end={{x:1,y:1}}>
+          <LinearGradient colors={["#D3AF37","#ffffffff"]} style={styles.view1} start={{x:0, y: 0}} end={{x:1,y:1}}>
               <View>
             <Text style={styles.innertext}>
               Account Security Assessment
             </Text>
-            <Ionicons name='shield-checkmark-sharp' size={60} color="white" />
+            <Ionicons name='shield-checkmark-sharp' size={60} color="black" />
           </View>
           </LinearGradient>
           </TouchableOpacity>
@@ -46,12 +46,12 @@ const tutorial = () => {
         <TouchableOpacity onPress={() => {
           router.push('/SystemSecurity')
         }}>
-          <LinearGradient colors={["#000000ff","#0f0a57ff"]} style={styles.view1} start={{x:0, y: 0}} end={{x:1,y:1}}>
+          <LinearGradient colors={["#D3AF37","#ffffffff"]} style={styles.view1} start={{x:0, y: 0}} end={{x:1,y:1}}>
           <View>
             <Text style={styles.innertext}>
               Device & System Security Assessment
             </Text>
-            <Ionicons name= 'desktop-sharp' size={60} color="white" />
+            <Ionicons name= 'desktop-sharp' size={60} color="black" />
           </View>
           </LinearGradient>
         </TouchableOpacity>
@@ -60,12 +60,12 @@ const tutorial = () => {
       <TouchableOpacity onPress={() => {
           router.push('/Riskmanagement')
         }}>
-          <LinearGradient colors={["#000000ff","#0f0a57ff"]} style={styles.view1} start={{x:0, y: 0}} end={{x:1,y:1}} >
+          <LinearGradient colors={["#D3AF37","#ffffffff"]} style={styles.view1} start={{x:0, y: 0}} end={{x:1,y:1}} >
           <View>
             <Text style={styles.innertext}>
               Risk Management Assessment
             </Text>
-            <Ionicons name= 'alert-circle-sharp' size={60} color="white" />
+            <Ionicons name= 'alert-circle-sharp' size={60} color="black" />
           </View>
           </LinearGradient>
         </TouchableOpacity>
@@ -105,7 +105,8 @@ const styles = StyleSheet.create({
   },
   innertext:{
     fontSize:20,
-    color: '#ffffff',
+    color: "black",
+    fontWeight: "bold"
   },
   upnote:{
     textAlign: 'center',

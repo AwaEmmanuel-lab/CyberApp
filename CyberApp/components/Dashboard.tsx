@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 
 const Dashboard = () => {
   return (
-    <LinearGradient colors={["#000000ff","#0f0a57ff"]} start={{x:0, y:0}} end={{x:1,y:1}} style = {styles.dashboardConatiner}>
+    <LinearGradient colors={["#D3AF37","#ffffffff"]} start={{x:0, y:0}} end={{x:1,y:1}} style = {styles.dashboardConatiner}>
         <View>
             <Text>Dashboard</Text>
         </View>
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         borderRadius:15,
         shadowColor:"#C0C0C0",
         shadowOpacity: 1,
-        shadowOffset: {height: 3, width: 3}
+        shadowOffset: {height: 3, width: 3},
+        opacity:0.5,
     }
 })

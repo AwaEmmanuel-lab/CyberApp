@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export const useSystemSecurity = () => {
 
-const {systemsecurityscore, setsystemsecurityscore }=useState(0)
+const [systemsecurityscore, setsystemsecurityscore] = useState(0)
 const [sysisLoading, setsysisLoading]= useState(false)
 
 
@@ -16,6 +16,7 @@ const [sysisLoading, setsysisLoading]= useState(false)
             const response = await fetch(`${API_URL}/api/sum/systemsecurity`)
             const result = await response.json()
             setsystemsecurityscore(result)
+            console.log(result)
         } catch (error) {
             console.log("Error fetching system security score: ", error)
         }finally{
@@ -31,7 +32,7 @@ const [sysisLoading, setsysisLoading]= useState(false)
                 headers: {
                     'content-type' : 'application/json'
                 },
-                body: JSON.stringify({qid: qid, answer: answer})
+                body: JSON.stringify({qid: qid, answer: Number(answer)})
             })
         } catch (error) {
             console.log("Error submitting answer to system security question: ", error)
@@ -42,14 +43,14 @@ const [sysisLoading, setsysisLoading]= useState(false)
 )
     const sysloaddata = useCallback(async () => {
         try {
-            setsysisLoading
-            await Promise.all([answertosystemsecurityquestion(), fetchsystemsecurityscore()])
+            setsysisLoading(true)
+            await fetchsystemsecurityscore()
         } catch (error) {
             console.log("couldn't load data:", error)
         }finally{
             setsysisLoading(false)
         }
-    }, [answertosystemsecurityquestion,fetchsystemsecurityscore])
+    }, [fetchsystemsecurityscore])
 
     return {systemsecurityscore, sysisLoading, sysloaddata, fetchsystemsecurityscore, answertosystemsecurityquestion}
 }

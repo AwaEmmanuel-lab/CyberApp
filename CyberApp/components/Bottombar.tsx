@@ -14,28 +14,28 @@ const Bottombar = ({}) => {
     
     //<View style = {styles.Bottombar}>
 
-      <LinearGradient colors={["#000000ff","#0f0a57ff"]} start={{x:0, y:0}} end={{x:1,y:1}} style = {styles.Bottombar}>
+      <LinearGradient colors={["#D3AF37","#ffffffff"]} start={{x:0, y:0}} end={{x:1,y:1}} style = {styles.Bottombar}>
         <TouchableOpacity onPress={() =>{
         // router.push()
       }}>
-        <Ionicons name = "home-sharp" size={size} color={"#fff"}/>
+        <Ionicons name = "home-sharp" size={size} color={"#000000ff"}/>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => {
         router.push("/analytics")
       }}>
-        <Ionicons name = "scan" size={size} color={"#fff"}/>
+        <Ionicons name = "scan" size={size} color={"#000000ff"}/>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() =>{
-        router.push("/Wifi")
+        router.push("/MSGScanner")
       }}>
-        <Ionicons name = 'wifi-sharp' size={size} color={"#fff"}/>
+        <Ionicons name = 'text-sharp' size={size} color={"#000000ff"}/>
       </TouchableOpacity>
       
       <TouchableOpacity onPress={() =>{
         router.push("/tutorial")
       }}>
-        <Ionicons name = "school-sharp" size={size} color={"#fff"}/>
+        <Ionicons name = "school-sharp" size={size} color={"#000000ff"}/>
       </TouchableOpacity>
       </LinearGradient>
           

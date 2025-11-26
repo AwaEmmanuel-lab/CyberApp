@@ -46,7 +46,7 @@ const Riskmanagement = () => {
   }
 
   return (
-    <View style = {{flex: 1, backgroundColor: 'white'}}>
+    <View style = {{flex: 1, backgroundColor: '#FDEBA3'}}>
           <Text style = {styles.header}> Risk Management Assesment</Text>
     
           <FlatList
@@ -55,7 +55,7 @@ const Riskmanagement = () => {
           keyExtractor={item => item.id}
           />
 
-          <TouchableOpacity onPress={() => setquestions(behavioralAwarenessQuestions)}>
+          <TouchableOpacity onPress={() => setquestions(behavioralAwarenessQuestions)} style = {styles.resetbtn}>
             <Text>Reset Questions</Text>
           </TouchableOpacity>
       </View>
@@ -70,6 +70,11 @@ const styles = StyleSheet.create({
     fontSize: 25,
     padding: 10
   },
+  resetbtn:{
+    alignItems: "center",
+    justifyContent: 'center',
+    padding: 3
+  },
   container:{
         // borderWidth: 1,
         marginTop: 10,
@@ -80,12 +85,14 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "white",
+        backgroundColor: "#d1a209ff",
         shadowColor: "#000",
         shadowOffset: {
           width: 3,
           height: 3
         },
+        shadowOpacity:0.5,
+        shadowRadius: 15
     },
     viewForthetwobuttons:{
       flexDirection: 'row',
