@@ -212,6 +212,38 @@ app.get("/api/sum/riskmanagement", async (req,res) => {
     }
 })
 
+app.delete("/api/delete/accountsecurity", async (req, res) => {
+    try {
+        await sql`DELETE FROM accountsecurity`;
+        return res.status(200).json({ message: "All accountsecurity records deleted" });
+    } catch (error) {
+        console.log("Internal server error:", error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+});
+
+// DELETE all rows from systemsecurity
+app.delete("/api/delete/systemsecurity", async (req, res) => {
+    try {
+        await sql`DELETE FROM systemsecurity`;
+        return res.status(200).json({ message: "All systemsecurity records deleted" });
+    } catch (error) {
+        console.log("Internal server error:", error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+});
+
+// DELETE all rows from riskmanagement
+app.delete("/api/delete/riskmanagement", async (req, res) => {
+    try {
+        await sql`DELETE FROM riskmanagement`;
+        return res.status(200).json({ message: "All riskmanagement records deleted" });
+    } catch (error) {
+        console.log("Internal server error:", error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+});
+
 
 
 

@@ -52,5 +52,26 @@ const [sysisLoading, setsysisLoading]= useState(false)
         }
     }, [fetchsystemsecurityscore])
 
-    return {systemsecurityscore, sysisLoading, sysloaddata, fetchsystemsecurityscore, answertosystemsecurityquestion}
+
+    const deleteSystemSecurity = useCallback(async () => {
+        setsysisLoading(true)
+        try {
+            const response = await fetch(`${API_URL}/api/delete/systemsecurity`, {
+                method: "DELETE"
+            })
+
+            const result = await response.json()
+            console.log("Delete result:", result)
+
+            // Reset UI score after deleting records
+            setsystemsecurityscore(0)
+
+        } catch (error) {
+            console.log("Error deleting system security records:", error)
+        } finally {
+            setsysisLoading(false)
+        }
+    }, [])
+
+    return {systemsecurityscore, sysisLoading, sysloaddata, fetchsystemsecurityscore, answertosystemsecurityquestion, deleteSystemSecurity}
 }

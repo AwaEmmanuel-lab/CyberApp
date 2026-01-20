@@ -55,7 +55,7 @@ const onRefresh = useCallback(async () => {
 
           
           <View style = {{marginRight: 24}}>
-            <Text style = {{color: "#D3AF37", fontSize:25}}>CyberApp</Text>
+            <Text style = {{color: "#D3AF37", fontSize:25}}>SafeNet</Text>
           </View>
           <Ionicons name = 'person-circle-sharp' size={30} color={"#D3AF37"} style = {{paddingTop: 5}}/>
         </View>

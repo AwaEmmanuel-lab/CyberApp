@@ -11,7 +11,7 @@ import { accountSecurityQuestionsV2 } from '@/hooks/uselistcontext'
 
 const AccountSecurity = () => {
 
-  const {answertoaccountsecurityquestion} = useAccountsecurity();
+  const {answertoaccountsecurityquestion, deleteAccountSecurity, fetchaccountsecurityscore} = useAccountsecurity();
   const [questions, setquestions] = useState(accountSecurityQuestionsV2);
 
   const removequestions = (itemid: String) => {
@@ -62,8 +62,12 @@ const Singlelist1 = ({item}: {item:list}) => {
       keyExtractor={item => item.id}
       />
 
-      <TouchableOpacity onPress={() => setquestions(accountSecurityQuestionsV2)} style = {styles.resetbtn}>
-        <Text>Reset Questions</Text>
+      <TouchableOpacity onPress={async() => {
+        await deleteAccountSecurity(), 
+        await fetchaccountsecurityscore()
+        setquestions(accountSecurityQuestionsV2)
+      }} style = {styles.resetbtn}>
+        <Text style = {{padding: 16}}>Reset Questions</Text>
       </TouchableOpacity>
     </View>
   )

@@ -199,7 +199,7 @@ const SystemSecurity = () => {
 
   
 
-  const {answertosystemsecurityquestion} = useSystemSecurity();
+  const {answertosystemsecurityquestion,deleteSystemSecurity, fetchsystemsecurityscore} = useSystemSecurity();
   const [questions, setquestions] = useState(deviceSecurityQuestions);
   
 
@@ -243,8 +243,13 @@ const SystemSecurity = () => {
       keyExtractor={item => item.id}
       />
 
-      <TouchableOpacity onPress={() => setquestions(deviceSecurityQuestions)} style = {styles.resetbtn}>
-        <Text>Reset Questions</Text>
+      <TouchableOpacity onPress={ async () => 
+       {await deleteSystemSecurity()
+       await fetchsystemsecurityscore()
+      setquestions(deviceSecurityQuestions)}
+        
+      } style = {styles.resetbtn}>
+        <Text style = {{padding: 16}}>Reset Questions</Text>
       </TouchableOpacity>
     </View>
   )

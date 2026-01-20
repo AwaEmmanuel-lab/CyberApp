@@ -51,5 +51,26 @@ export const useAccountsecurity = () => {
         }
     }, [fetchaccountsecurityscore])
 
-    return {accountscore, accisLoading, accloaddata, fetchaccountsecurityscore, answertoaccountsecurityquestion}
+
+    const deleteAccountSecurity = useCallback(async () => {
+        setaccisLoading(true)
+        try {
+            const response = await fetch(`${API_URL}/api/delete/accountsecurity`, {
+                method: "DELETE"
+            })
+
+            const result = await response.json()
+            console.log("Delete result:", result)
+
+            // After delete, reset UI score to 0
+            setaccountscore(0)
+
+        } catch (error) {
+            console.log("Error deleting account security records:", error)
+        } finally {
+            setaccisLoading(false)
+        }
+    }, [])
+
+    return {accountscore, accisLoading, accloaddata, fetchaccountsecurityscore, answertoaccountsecurityquestion, deleteAccountSecurity}
 }

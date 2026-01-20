@@ -53,5 +53,26 @@ export const useRiskmanagement = () => {
         }
     }, [fetchriskscore])
 
-    return {riskscore, riskisLoading, answertotheriskmanagementquestions, fetchriskscore, riskloaddata}
+
+    const deleteRiskManagement = useCallback(async () => {
+        setriskisLoading(true)
+        try {
+            const response = await fetch(`${API_URL}/api/delete/riskmanagement`, {
+                method: "DELETE"
+            })
+
+            const result = await response.json()
+            console.log("Delete result:", result)
+
+            // Reset UI score after delete
+            setriskscore(0)
+
+        } catch (error) {
+            console.log("Error deleting risk management records:", error)
+        } finally {
+            setriskisLoading(false)
+        }
+    }, [])
+
+    return {riskscore, riskisLoading, answertotheriskmanagementquestions, fetchriskscore, riskloaddata, deleteRiskManagement}
 }
